@@ -9,13 +9,15 @@ import time
 from tkinter import ttk 
 import tkinter as notebook
 from colour import Color
-matt_black = Color("#060333")
+matt_black = Color("#171717")
 aqua_blue = Color("#00916E")
 emerald = Color("#1982C4")
 cyber_yellow = Color("#FFCF00")
 purple = Color("#FA003F")
 orange = Color("#EE6123")
 hot_pink = Color("#FF69B4")
+blacksy=Color("#171717")
+white = Color("#e5e5e5")
 #
 import sys
 import time
@@ -55,7 +57,7 @@ c.place(x=0, y=0)
 
 
 
-a = Canvas(root,width=10000,height=1000,bg=matt_black)
+a = Canvas(root,width=10000,height=1000,bg=blacksy)
 a.place(x=0,y=0)
 
 sch = Canvas(root, width=1200, height=1000, bg="white")
@@ -64,7 +66,7 @@ sch.place(x=0, y=0)
 home = Canvas(root, width=1200, height=1000, bg="white")
 home.place(x=0, y=0)
 
-link = Canvas(root, width=1200, height=1000, bg="white")
+link = Canvas(root, width=1200, height=1000, bg=white)
 link.place(x=0, y=0)
 
 tt = Canvas(root,width=1200,height=1000,bg="white")
@@ -260,7 +262,12 @@ def Setphy():
         setOn()
 
 
-
+def newWindow():
+    response=tkinter.messagebox.askyesno('Exit','Are you sure you want to exit?')
+    if response:
+        root.destroy()
+    else:
+        return None
 
 
 
@@ -281,31 +288,30 @@ slide6 = Label(q, text = "SETTINGS",bd=2,bg=matt_black,fg="white").place(x = 45,
 
 #------------------------IMAGES--------------------
 
-yes= PhotoImage(file='icon_menu.png')
+yes= PhotoImage(file='menu.png')
 
 img_label= Label(image=yes)
 
-pic2= PhotoImage(file='cil-home.png')
-
+pic2= PhotoImage(file='3.png')
 img_label2= Label(image=pic2)
 
-pic3= PhotoImage(file='cil-comment-square.png')
+pic3= PhotoImage(file='17.png')
 
 img_label3= Label(image=pic3)
 
-pic4= PhotoImage(file='cil-external-link.png')
+pic4= PhotoImage(file='12.png')
 
 img_label4= Label(image=pic4)
 
-pic5= PhotoImage(file="cil-view-module.png")
+pic5= PhotoImage(file="13.png")
 
 img_label5= Label(image=pic5)
 
-pic6= PhotoImage(file='cil-save.png')
+pic6= PhotoImage(file='20.png')
 
 img_label6= Label(image=pic6)
 
-pic7= PhotoImage(file='icon_settings.png')
+pic7= PhotoImage(file='14.png')
 
 img_label7= Label(image=pic7)
 pic8= PhotoImage(file="fullscreen.png")
@@ -314,36 +320,54 @@ img_label8= Label(image=pic8)
 
 pic9= PhotoImage(file="1.png")
 img_label9= Label(image=pic9)
+
+pic10= PhotoImage(file="22.png")
+img_label10= Label(image=pic10)
+
+pic11= PhotoImage(file="23.png")
+img_label11= Label(image=pic11)
+
+pic12= PhotoImage(file="24.png")
+img_label12= Label(image=pic9)
+
+pic13= PhotoImage(file="25.png")
+img_label13= Label(image=pic9)
+
+pic14= PhotoImage(file="26.png")
+img_label14= Label(image=pic9)
+
+pic15= PhotoImage(file="27.png")
+img_label15= Label(image=pic9)
 #------------------------BUTTONS-----------------------------
 
 
 buttonClicked = False
 button1 = True
-btn = Button(root,image=yes,background=matt_black,activebackground = "white" ,relief="solid",border = 0,height=35,width=35,command=onPress)
+btn = Button(root,image=yes,background=matt_black,activebackground = matt_black ,relief="solid",border = 0,height=35,width=35,command=onPress)
 btn.pack()
 btn.place(x= 5, y= 5)
 
-btn2 = Button(root,text="Home",image=pic2,background=aqua_blue,activebackground = "white",relief="solid",border = 0,height=35,width=35,command=HomePhy)
-btn2.pack()
+btn2 = Button(root,text="Home",image=pic2,background=blacksy,activebackground = matt_black,relief="solid",border = 0,height=35,width=35,command=HomePhy)
+btn2.pack(padx=50,pady=50)
 btn2.place(x= 5, y= 50)
 
-btn3 = Button(q,image=pic3,background=matt_black,activebackground = "white",relief="solid",border = 0,height=35,width=35,command=SchPhy)
+btn3 = Button(q,image=pic3,background=matt_black,activebackground = matt_black,relief="solid",border = 0,height=35,width=35,command=SchPhy)
 btn3.pack()
 btn3.place(x= 5, y= 100)
 
-btn4 = Button(q,image=pic4,background=matt_black,activebackground = "white",relief="solid",border = 0,height=35,width=35,command=LinksPhy)
+btn4 = Button(q,image=pic4,background=matt_black,activebackground = matt_black,relief="solid",border = 0,height=35,width=35,command=LinksPhy)
 btn4.pack()
 btn4.place(x= 5, y= 150)
 
-btn5 = Button(q,image=pic5,background=matt_black,activebackground = "white",relief="solid",border = 0,height=35,width=35,command=TTphy)
+btn5 = Button(q,image=pic5,background=matt_black,activebackground = matt_black,relief="solid",border = 0,height=35,width=35,command=TTphy)
 btn5.pack()
 btn5.place(x= 5, y= 200)
 
-btn6 = Button(q,image=pic6,background=matt_black,activebackground = "white",relief="solid",border = 0,height=35,width=35,command=onClick2)
+btn6 = Button(q,image=pic6,background=matt_black,activebackground = matt_black,relief="solid",border = 0,height=35,width=35,command=onClick2)
 btn6.pack()
 btn6.place(x= 5, y= 250)
 
-btn7 = Button(q,image=pic7,background=matt_black,activebackground = "white",relief="solid",border = 0,height=35,width=35,command=Setphy)
+btn7 = Button(q,image=pic7,background=matt_black,activebackground = matt_black,relief="solid",border = 0,height=35,width=35,command=Setphy)
 btn7.pack()
 btn7.place(x= 5, y= 400)
 
@@ -360,29 +384,33 @@ btn7.place(x= 5, y= 400)
 
 #--------------------Buttons for Home-------------------
 #home_start = Label(home, text = "Welcome",bd=2,bg=matt_black,fg="white").place(x = 100,y = 100)
-btn8 = Button(home,text="English",background="white",font="Ariel,200",relief="solid",border = 0,activebackground=aqua_blue,height=3,width=6,command=None)
+btn8 = Button(link,image=pic10,background=white,activebackground = white ,relief="solid",border = 0,height=200,width=200,command=None)
 btn8.pack()
 btn8.place(x= 100, y= 100)
 
-btn9 = Button(home,text="Math",background="white",font="Ariel,200",relief="solid",border = 0,activebackground=aqua_blue,height=3,width=6,command=None)
+btn9 = Button(link,text="Home",image=pic11,background=white,activebackground = white,relief="solid",border = 0,height=200,width=200,command=None)
 btn9.pack()
-btn9.place(x= 225, y= 100)
+btn9.place(x= 300, y= 100)
 
-btn10 = Button(home,text="Physics",background="white",font="Ariel,200",relief="solid",border = 0,activebackground=aqua_blue,height=3,width=6,command=None)
+btn10 = Button(link,image=pic12,background=white,activebackground = white,relief="solid",border = 0,height=200,width=200,command=None)
 btn10.pack()
-btn10.place(x= 350, y= 100)
+btn10.place(x= 100, y= 300)
 
-btn11 = Button(home,text="Chemistry",background="white",font="Ariel,200",relief="solid",border = 0,activebackground=aqua_blue,height=3,width=8,command=None)
+btn11 = Button(link,image=pic13,background=white,activebackground = white,relief="solid",border = 0,height=200,width=200,command=None)
 btn11.pack()
-btn11.place(x= 130, y= 200)
+btn11.place(x= 300, y= 300)
 
-btn12 = Button(home,text="CS",background="white",relief="solid",font="Ariel,200",border = 0,activebackground=aqua_blue,height=3,width=8,command=None)
+btn12 = Button(link,image=pic14,background=white,activebackground = white,relief="solid",border = 0,height=200,width=200,command=None)
 btn12.pack()
-btn12.place(x= 275, y= 200)
+btn12.place(x= 500, y= 100)
 
-btn13 = Button(tt,image=pic9,background="white",relief="solid",font="Ariel,200",border = 0,activebackground="white",height=250,width=250,command=None)
+btn13 = Button(link,image=pic15,background=white,activebackground = white,relief="solid",border = 0,height=200,width=200,command=newWindow)
 btn13.pack()
-btn13.place(x= 275, y= 200)
+btn13.place(x= 500, y= 300)
+
+# btn14 = Button(link,image=pic7,background=matt_black,activebackground = matt_black,relief="solid",border = 0,height=35,width=35,command=Setphy)
+# btn14.pack()
+# btn14.place(x= 5, y= 400)
 #-------------------------------
 #label=Label(tt, text='Timetable', font=('Fixedsys',32))
 #tt.pack(pady=5)
@@ -396,15 +424,22 @@ btn13.place(x= 275, y= 200)
 # text_file.close()
 
 #Button(tt, text = "Save", command = None, relief ="ridge", bg = "WHITE", fg="black", font=('Century Gothic',16), width=15, height =1).pack(pady=15)
-def end():
-    a.destroy
-    a.config(width=0,height=0)
-    None
-a = Canvas(root,width=10000,height=1000,bg="grey")
-a.place(x=0,y=0)
-loading = Label(a, image=pic8,border=0,bg="grey",fg="white",height=355,width=350).place(x = 350,y = 300,anchor=CENTER)
-a.after(5000,end)
+# def end():
+#     a.destroy
+#     a.config(width=0,height=0)
+#     None
+# a = Canvas(root,width=10000,height=1000,bg="grey")
+# a.place(x=0,y=0)
+# loading = Label(a, image=pic8,border=0,bg="grey",fg="white",height=355,width=350).place(x = 350,y = 300,anchor=CENTER)
+# a.after(5000,end)
 
-
+# entry1 = tk.Entry (link) 
+# input = link.create_window(200, 140, window=entry1)
+# rint(link)
+# stuff="hello"
+# my_text = Text(link, width = 20, height = 20)
+# my_text.config()
+# my_text.pack(pady = 15)
+# my_text.insert(END, stuff)
 #-----------------------------------
 root.mainloop()
